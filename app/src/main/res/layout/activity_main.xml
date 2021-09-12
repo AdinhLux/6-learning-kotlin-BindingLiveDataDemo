@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Binding to ViewModel class -->
     <data>
         <variable
             name="myViewModel"
@@ -21,6 +22,7 @@
         android:textSize="66sp"
         android:textStyle="bold"
         android:typeface="serif"
+        android:text="@{String.valueOf(myViewModel.countReadData)}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
