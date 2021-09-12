@@ -1,9 +1,8 @@
 package com.anushka.viewmodeldemo1
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.anushka.viewmodeldemo1.databinding.ActivityMainBinding
 
@@ -15,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         viewModel = ViewModelProvider(this).get(MainActivityViewModel::class.java)
         binding.myViewModel = viewModel
-        viewModel.count.observe(this, Observer {
-          binding.countText.text = it.toString()
+        viewModel.countReadData.observe(this, {
+            binding.countText.text = it.toString()
         })
-        
+
     }
 }

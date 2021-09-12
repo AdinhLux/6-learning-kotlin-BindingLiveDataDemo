@@ -1,16 +1,20 @@
 package com.anushka.viewmodeldemo1
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
 class MainActivityViewModel : ViewModel() {
-    var count = MutableLiveData<Int>()
+    private var count = MutableLiveData<Int>()
+
+    val countReadData: LiveData<Int>
+        get() = count
 
     init {
         count.value = 0
     }
 
-    fun updateCount(){
+    fun updateCount() {
         count.value = (count.value)?.plus(1)
     }
 }
